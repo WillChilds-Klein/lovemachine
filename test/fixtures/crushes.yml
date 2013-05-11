@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  crusher: MyString
+  crush1: MyString
+  crush2: MyString
+  crush3: MyString
+  crush4: MyString
+  crush5: MyString
+  crush6: MyString
+  crush7: MyString
+
+two:
+  crusher: MyString
+  crush1: MyString
+  crush2: MyString
+  crush3: MyString
+  crush4: MyString
+  crush5: MyString
+  crush6: MyString
+  crush7: MyString
