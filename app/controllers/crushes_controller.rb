@@ -12,6 +12,8 @@ class CrushesController < ApplicationController
     		Hint.create(:email => params[:crush][("crush"+(i+1).to_s).to_sym], :content => params[:hint][key])
     	end
     end
+    @crush.populate_matches
+    @crush.send_emails
    	redirect_to '/'
   end
 end
