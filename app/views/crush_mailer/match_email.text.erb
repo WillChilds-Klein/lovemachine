@@ -1,8 +1,8 @@
-Hey there <%= @crusher %>,
+Hey there <%= first_name @crusher_email %>,
 
 Love has found you.
-You have been matched with <%= @crushee %>. They think you're hot shit. You know they're hot shit.
-Make sure you come to the Last Chance Dance this Thursday, its your LAST CHANCE to get weird with <%= @crushee %>.
+You have been matched with <%= first_name(@crushee_email) + " " + last_name(@crushee_email) %>. They think you're hot shit. You know they're hot shit.
+Make sure you come to the Last Chance Dance this Thursday, its your LAST CHANCE to get weird with <%= frist_name @crushee_email. %>.
       
 Yours truly, 
 Cupid

@@ -1,12 +1,24 @@
 class CrushMailer < ActionMailer::Base
+  include Format
   default from: "yaleseniorcupid@gmail.com"
 
-  def match_email(crusher, crushee)
-  	@crusher = crusher
-  	@crushee = crushee
-  	email = @crusher # change to @crush.email once db schema is modified to accomodate email addresses
+  def match_notify(party1, party2)
+    match_email(party1, party2)
+    match_email(party2, party1)
+  end
 
-  	mail(:to => email, :subject => "You'll want to open this. Trust me.")
+  def match_email(crusher, crushee) # takes in emails, not Crush objects
+  	@crusher = crusher
+  	@crushee = crushee 
+
+  	mail(:to => crusher, :subject => "You'll want to open this. Trust me.")
+  end
+
+  def hint_notify(lucky_person) # Hint object passed in
+    @email = lucky_person.email
+    @content = lucky_person.content
+
+    mail(:to => @email, :subject => "oooOOOooo somebody liiikkkeess you")
   end
 
   def crush_email
