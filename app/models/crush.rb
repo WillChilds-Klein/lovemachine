@@ -1,6 +1,9 @@
 class Crush < ActiveRecord::Base
+  before_save :set_uuid
   attr_accessible :matches, :crush1, :crush2, :crush3, :crush4, :crush5, :crush6, :crush7, :email, :netID
   serialize :matches, Array
+  extend FriendlyId
+  friendly_id :uuid
 
   def all_crushes
     a = Array.new
@@ -29,7 +32,7 @@ class Crush < ActiveRecord::Base
   end
 
   def form_done?
-    return !(crush1.empty? && crush2.empty? && crush3.empty? && crush4.empty? && crush5.empty? && crush6.empty? & crush7.empty?)
+    return !(crush1.blank? && crush2.blank? && crush3.blank? && crush4.blank? && crush5.blank? && crush6.blank? & crush7.blank?)
   end
 
   def populate_matches
@@ -47,5 +50,9 @@ class Crush < ActiveRecord::Base
     self.matches.each do |match|
       CrushMailer.match_notify(self.email, match)
     end
+  end
+
+  def set_uuid
+    self.uuid = SecureRandom.uuid.split("-").first if self.uuid.nil?
   end
 end

@@ -14,6 +14,10 @@ class CrushesController < ApplicationController
     end
     @crush.populate_matches
     @crush.send_emails
-   	redirect_to '/'
+   	if request.xhr? 
+        render :nothing => true
+      else
+        redirect_to '/'
+      end
   end
 end

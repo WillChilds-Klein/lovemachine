@@ -3,7 +3,9 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
-  $("form.edit_crush").on("ajax:success", (e, data, status, xhr) ->
-    $("form.edit_crush").append "<p>SUCCESS</p>"
-  ).bind "ajax:error", (e, xhr, status, error) ->
-    $("form.edit_crush").append "<p>ERROR</p>"
+  $("form[data-remote]").bind("ajax:success", () ->
+    console.log "success"
+  ).bind("ajax:before", () ->
+    console.log "before"
+  ).bind "ajax:error", () ->
+    console.log "error"

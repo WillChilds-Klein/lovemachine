@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130512010816) do
+ActiveRecord::Schema.define(:version => 20130512221021) do
 
   create_table "crushes", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130512010816) do
     t.string   "crush5"
     t.string   "crush6"
     t.string   "crush7"
+    t.string   "uuid"
   end
 
   create_table "hints", :force => true do |t|
