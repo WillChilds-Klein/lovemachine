@@ -52,6 +52,12 @@ class Crush < ActiveRecord::Base
     end
   end
 
+  def send_hints
+    Hint.find(:author => self.email).each do |hint|
+      CrushMailer.hint_notify(hint.email, hint.content)
+    end
+  end  
+
   def set_uuid
     self.uuid = SecureRandom.uuid.split("-").first if self.uuid.nil?
   end
