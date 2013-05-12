@@ -1,6 +1,6 @@
 <h1>Do you feel the love?</h1>
 
-<%= form_for @crush do |form| %>
+<%= form_for @crush, remote: true do |form| %>
 	<p>
 		<%= form.label "Your Yale email" %> <br />
 		<%= form.text_field :email %>

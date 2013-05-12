@@ -4,32 +4,32 @@ class Crush < ActiveRecord::Base
 
   def all_crushes
     a = Array.new
-    if crush1 then
-      all.push(crush1)
+    if !crush1.empty? then
+      a.push(crush1)
     end
-    if crush2 then
-      all.push(crush2)
+    if !crush1.empty? then
+      a.push(crush2)
     end
-    if crush3 then
-      all.push(crush3)
+    if !crush1.empty? then
+      a.push(crush3)
     end
-    if crush4 then
-      all.push(crush4)
+    if !crush4.empty? then
+      a.push(crush4)
     end
-    if crush5 then
-      all.push(crush5)
+    if !crush5.empty? then
+      a.push(crush5)
     end
-    if crush6 then
-      all.push(crush6)
+    if !crush6.empty? then
+      a.push(crush6)
     end
-    if crush7 then
-      all.push(crush7)
+    if !crush7.empty? then
+      a.push(crush7)
     end
     return a
   end
 
   def form_done?
-    return !!(crush1 || crush2 || crush3 || crush4 || crush5 || crush6 || crush7)
+    return !(crush1.empty? && crush2.empty? && crush3.empty? && crush4.empty? && crush5.empty? && crush6.empty? & crush7.empty?)
   end
 
   def populate_matches
