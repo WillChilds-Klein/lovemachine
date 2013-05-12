@@ -1,5 +1,5 @@
 Lovemachine::Application.routes.draw do
-
+  root :to => 'home#index'
   resources :crushes
   # The priority is based upon order of creation:
   # first created -> highest priority.

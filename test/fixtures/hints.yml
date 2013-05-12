@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  p1: MyString
-  p2: MyString
+  email: MyString
+  content: MyText
 
 two:
-  p1: MyString
-  p2: MyString
+  email: MyString
+  content: MyText

@@ -11,20 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130511040205) do
+ActiveRecord::Schema.define(:version => 20130512010816) do
 
   create_table "crushes", :force => true do |t|
-    t.string   "crusher"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "email"
     t.string   "NetID"
-    t.string   "crush_list"
+    t.text     "matches"
+    t.string   "crush1"
+    t.string   "crush2"
+    t.string   "crush3"
+    t.string   "crush4"
+    t.string   "crush5"
+    t.string   "crush6"
+    t.string   "crush7"
   end
 
-  create_table "matches", :force => true do |t|
-    t.string   "p1"
-    t.string   "p2"
+  create_table "hints", :force => true do |t|
+    t.string   "email"
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
