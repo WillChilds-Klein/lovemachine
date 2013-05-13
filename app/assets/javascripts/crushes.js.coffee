@@ -6,10 +6,11 @@ success = ->
   console.log "done"
   window.location.href = "/"
 
-$(document).ready ->
+$ ->
   $("form[data-remote]").bind("ajax:success", () ->
     do success
   ).bind("ajax:before", () ->
     console.log "before"
   ).bind "ajax:error", () ->
     console.log "error"
+  $(".question").tooltip placement: 'right'
