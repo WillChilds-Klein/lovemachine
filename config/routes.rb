@@ -7,6 +7,7 @@ Lovemachine::Application.routes.draw do
   resources :crushes
   match '/logout' => 'sessions#logout'
   match '/login' => 'sessions#login'
+  #match '/song' => '/music/lets_get_it_on.mp3'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
