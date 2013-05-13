@@ -1,7 +1,6 @@
 class Crush < ActiveRecord::Base
   include Format
   before_save :set_uuid, :fix_email
-  after_find :unfix_email
   attr_accessible :matches, :crush1, :crush2, :crush3, :crush4, :crush5, :crush6, :crush7, :email, :netID
   serialize :matches, Array
   extend FriendlyId
