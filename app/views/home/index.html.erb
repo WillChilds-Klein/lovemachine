@@ -14,6 +14,12 @@
 <div class="row matches">
   <div class="offset2 span8">
     <h2>Matches</h2>
+    <% if @matches.length == 0 then %>
+      <div class="match-group tile none">
+        <h3>No matches yet.</h3>
+        <h4>Check back soon once more people have picked their crushes!</h4>
+      </div>
+    <% end %>
     <% @matches.each do |match| %>
       <div class="match-group tile">
         <span class="icon heart"></span>
@@ -26,11 +32,20 @@
 <div class="row hints">
   <div class="offset2 span8">
     <h2>Hints</h2>
+    <% if @hints.length == 0 then %>
+      <div class="hint-group tile none">
+        <h3>No hints yet.</h3>
+      </div>
+    <% end %>
     <% @hints.each do |hint| %>
       <div class="hint-group tile">
         <span class="icon hint"></span>
         <%= hint.content %>
       </div>
+
     <% end %>
   </div>
+</div>
+
+<div class="footer">
 </div>

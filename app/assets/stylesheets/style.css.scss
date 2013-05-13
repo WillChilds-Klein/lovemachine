@@ -185,6 +185,15 @@ form {
     margin: 0 30px 0 5px;
     vertical-align: baseline;
   }
+  &.none {
+    text-align: center;
+    h3 {
+      color: rgba(52, 73, 94, 0.3);
+    }
+    h4 {
+      color: rgba(52, 73, 94, 0.3);
+    }
+  }
 }
 
 .hint-group {
@@ -194,6 +203,12 @@ form {
   span.icon.hint {
     margin: 0 30px 0 5px;
   }
+  &.none {
+    text-align: center;
+    h3 {
+      color: rgba(52, 73, 94, 0.3);
+    }
+    }
 }
 
 @-webkit-keyframes spin { 
