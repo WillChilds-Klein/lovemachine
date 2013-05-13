@@ -1,5 +1,6 @@
 class Crush < ActiveRecord::Base
-  before_save :set_uuid
+  include Format
+  before_save :set_uuid, :fix_email
   attr_accessible :matches, :crush1, :crush2, :crush3, :crush4, :crush5, :crush6, :crush7, :email, :netID
   serialize :matches, Array
   extend FriendlyId
@@ -53,12 +54,16 @@ class Crush < ActiveRecord::Base
   end
 
   def send_hints
-    Hint.find(:author => self.email).each do |hint|
+    Hint.where(:author => self.email).each do |hint|
       CrushMailer.hint_notify(hint.email, hint.content)
     end
   end  
 
   def set_uuid
     self.uuid = SecureRandom.uuid.split("-").first if self.uuid.nil?
+  end
+
+  def fix_email
+    self.email = yale_email(self.email)
   end
 end

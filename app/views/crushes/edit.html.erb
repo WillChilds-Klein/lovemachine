@@ -1,21 +1,28 @@
 <h1>Do you feel the love?</h1>
 
-<%= form_for @crush, remote: true do |form| %>
-	<p>
-		<%= form.label "Your Yale email" %> <br />
-		<%= form.text_field :email %>
-	</p>
-	<p>
-		<%= form.label "Crush #1" %> <br />
-		<%= form.text_field :crush1 %> <br />
-	</p>
+<%= form_for @crush, remote: true, :html => {:class => "form-horizontal"} do |form| %>
+	<div class="control-group">
+		<%= form.label :email, "<span class='icon person'></span> You:".html_safe, :class => "control-label" %>
+		<div class="controls">
+			<div class="input-append">
+				<%= form.text_field :email %>
+				<span class="add-on">@yale.edu</span>
+			</div>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= form.label :crush1, "<span class='icon heart'></span> Crush #1's email".html_safe, :class => "control-label" %>
+		<div class="controls">
+			<%= form.text_field :crush1, :pattern => ".*@yale\.edu" %>
+		</div>
+	</div>
 	<p>
 		<%= form.label "Hint #1" %> <br />
 		<%= text_field(:hint, :hint1) %>
 	</p>
 	<p>
 		<%= form.label "Crush #2" %> <br />
-		<%= form.text_field :crush2 %>
+		<%= form.text_field :crush2, :pattern => ".*@yale\.edu" %>
 	</p>
 	<p>
 		<%= form.label "Hint #2" %> <br />
@@ -23,7 +30,7 @@
 	</p>
 	<p>
 		<%= form.label "Crush #3" %> <br />
-		<%= form.text_field :crush3 %>
+		<%= form.text_field :crush3, :pattern => ".*@yale\.edu" %>
 	</p>
 	<p>
 		<%= form.label "Hint #3" %> <br />
@@ -31,7 +38,7 @@
 	</p>
 	<p>
 		<%= form.label "Crush #4" %> <br />
-		<%= form.text_field :crush4 %>
+		<%= form.text_field :crush4, :pattern => ".*@yale\.edu" %>
 	</p>
 	<p>
 		<%= form.label "Hint #4" %> <br />
@@ -39,7 +46,7 @@
 	</p>
 	<p>
 		<%= form.label "Crush #5" %> <br />
-		<%= form.text_field :crush5 %>
+		<%= form.text_field :crush5, :pattern => ".*@yale\.edu" %>
 	</p>
 	<p>
 		<%= form.label "Hint #5" %> <br />
@@ -47,7 +54,7 @@
 	</p>
 	<p>
 		<%= form.label "Crush #6" %> <br />
-		<%= form.text_field :crush6 %>
+		<%= form.text_field :crush6, :pattern => ".*@yale\.edu" %>
 	</p>
 	<p>
 		<%= form.label "Hint #6" %> <br />
@@ -55,7 +62,7 @@
 	</p>
 	<p>
 		<%= form.label "Crush #7" %> <br />
-		<%= form.text_field :crush7 %>
+		<%= form.text_field :crush7, :pattern => ".*@yale\.edu" %>
 	</p>
 	<p>
 		<%= form.label "Hint #7" %> <br />

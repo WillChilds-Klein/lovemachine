@@ -13,4 +13,11 @@ module Format
     [self.first_name(email),self.last_name(email)].join(" ")
   end
 
+  def yale_email(string)
+    if string.include? "@yale.edu" then
+      return string
+    else
+      return string+"@yale.edu"
+    end
+  end
 end

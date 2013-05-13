@@ -1,4 +1,5 @@
 class CrushesController < ApplicationController
+    include Format
 
 	def edit
 		@crush = current_user
@@ -11,7 +12,7 @@ class CrushesController < ApplicationController
     	if params[:hint][key] then
     		Hint.create(:email => params[:crush][("crush"+(i+1).to_s).to_sym],
                 :content => params[:hint][key],
-                :author => self.email)
+                :author => @crush.email)
     	end
     end
     @crush.send_hints

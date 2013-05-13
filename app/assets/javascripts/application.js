@@ -12,4 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.slider
+//= require flat-ui-app
+//= require bootstrap-tooltip
+//= require custom_radio     
+//= require html5shiv
+//= require jquery.dropkick-1.0.0  
+//= require jquery.tagsinput   
+//= require custom_checkbox_and_radio  
+//= require icon-font-ie7  
+//= require jquery.placeholder
+//= require lte-ie7-24
 //= require_tree .
