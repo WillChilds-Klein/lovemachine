@@ -1,1 +1,36 @@
-<h1>Success!</h1>
+<div class="row header">
+  
+  <div class="offset2 span6">
+    <h1 class="logo-wrapper">
+      LoveMachine
+      <small>Find your Yale crushes.</small>
+    </h1>
+  </div>
+  <div class="offset1 span2">
+    <div id="logo"></div>
+  </div>
+</div>
+
+<div class="row matches">
+  <div class="offset2 span8">
+    <h2>Matches</h2>
+    <% @matches.each do |match| %>
+      <div class="match-group tile">
+        <span class="icon heart"></span>
+        <h3><%= match %></h3>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row hints">
+  <div class="offset2 span8">
+    <h2>Hints</h2>
+    <% @hints.each do |hint| %>
+      <div class="hint-group tile">
+        <span class="icon hint"></span>
+        <%= hint.content %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -45,8 +45,8 @@ class Crush < ActiveRecord::Base
   def populate_matches
     Crush.all.each do |their|
       if (their.all_crushes.include? self.email) && (self.all_crushes.include? their.email) then
-        self.matches.push(their.email)
-        their.matches.push(self.email)
+        self.matches.push(their.email) unless self.matches.include? their.email
+        their.matches.push(self.email) unless their.matches.include? self.email
         self.save
         their.save
       end
