@@ -80,30 +80,5 @@ class Crush < ActiveRecord::Base
     self.crush7 = yale_email(self.crush7)
   end
 
-  def unfix_email
-    if self.email then
-      self.email = self.email.chomp("@yale.edu")
-    end
-    if crush1 then
-        self.crush1 = self.crush1.chomp("@yale.edu")
-    end
-    if crush2 then
-        self.crush1 = self.crush1.chomp("@yale.edu")
-    end
-    if crush3 then
-        self.crush1 = self.crush1.chomp("@yale.edu")
-    end
-    if crush4 then
-        self.crush1 = self.crush1.chomp("@yale.edu")
-    end
-    if crush5 then
-        self.crush1 = self.crush1.chomp("@yale.edu")
-    end
-    if crush6 then
-        self.crush1 = self.crush1.chomp("@yale.edu")
-    end
-    if crush7 then
-        self.crush1 = self.crush1.chomp("@yale.edu")
-    end
-  end
+
 end

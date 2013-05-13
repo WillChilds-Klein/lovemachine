@@ -3,7 +3,7 @@ class CrushesController < ApplicationController
     before_filter CASClient::Frameworks::Rails::Filter
 
 	def edit
-		@crush = current_user
+		@crush = unfix_email(current_user)
 	end
 
 	def update
