@@ -6,11 +6,16 @@ success = ->
   console.log "done"
   window.location.href = "/"
 
+before = ->
+  $(".form-wrapper").hide()
+  $(".loading-wrapper").show()
+  $(".infinity-spinner").addClass "spin"
+
 $ ->
   $("form[data-remote]").bind("ajax:success", () ->
     do success
   ).bind("ajax:before", () ->
-    console.log "before"
+    do before
   ).bind "ajax:error", () ->
     console.log "error"
   $(".question").tooltip placement: 'right'
