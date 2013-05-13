@@ -1,5 +1,6 @@
 class CrushesController < ApplicationController
     include Format
+    before_filter CASClient::Frameworks::Rails::Filter
 
 	def edit
 		@crush = current_user

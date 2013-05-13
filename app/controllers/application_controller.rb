@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   include Format
   protect_from_forgery
-  before_filter CASClient::Frameworks::Rails::Filter
 
   protected
 

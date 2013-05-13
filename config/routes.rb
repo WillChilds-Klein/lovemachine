@@ -1,5 +1,9 @@
 Lovemachine::Application.routes.draw do
-  root :to => 'home#index'
+  scope :constraints => lambda{|req| !req.session[:cas_user].blank? } do
+    root to: 'home#index'
+  end
+
+  root to: 'static_pages#landing'
   resources :crushes
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -13,10 +13,14 @@
   font-style: normal; }
 
 span.icon {
-  margin-right: 10px;
+  margin: 0 10px;
   font-size: 24px;
   vertical-align:middle;
   font-family: Flat-UI-Icons-24;
+}
+
+span.icon.heart {
+  color: #e74c3c;
 }
 
 span.icon.person::before {
@@ -27,13 +31,18 @@ span.icon.heart::before {
   content: "\e00b";
 }
 
+span.icon.hint::before {
+  content: "\e008";
+}
+
+
 label, select, button, input[type="button"], input[type="reset"], input[type="submit"], input[type="radio"], input[type="checkbox"] {
   cursor: auto;
 }
 
 .input-append .add-on,
   .input-prepend .add-on {
-  padding: 10px 12px 11px 9px }
+  padding: 10px 9px 11px 7px; }
 
 .input-prepend input {
   border-radius: 0 4px 4px 0; }
@@ -44,7 +53,7 @@ label, select, button, input[type="button"], input[type="reset"], input[type="su
 .input-append .add-on,
   .input-preprend .add-on {
     border: none;
-  background: #cad2d3;
+  background: #dce4ec;
   font-weight: bold;
   color: #34495e;
   text-shadow: none;
@@ -52,3 +61,19 @@ label, select, button, input[type="button"], input[type="reset"], input[type="su
   -moz-box-shadow: none;
   box-shadow: none;
   }
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  padding-right: 10px;
+}
+
+.input-append textarea, .input-append input {
+  text-align: right;
+}
+
+.crush-group {
+  margin-top: 50px;
+}
+
+form {
+  margin-top: 50px;
+}

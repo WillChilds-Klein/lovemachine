@@ -14,7 +14,7 @@ module Format
   end
 
   def yale_email(string)
-    if string.include? "@yale.edu" then
+    if (string.blank?) || (string.include? "@yale.edu") then
       return string
     else
       return string+"@yale.edu"

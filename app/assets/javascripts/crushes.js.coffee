@@ -2,9 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+success = ->
+  console.log "done"
+  window.location.href = "/"
+
 $(document).ready ->
   $("form[data-remote]").bind("ajax:success", () ->
-    console.log "success"
+    do success
   ).bind("ajax:before", () ->
     console.log "before"
   ).bind "ajax:error", () ->

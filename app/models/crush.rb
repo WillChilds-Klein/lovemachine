@@ -1,6 +1,7 @@
 class Crush < ActiveRecord::Base
   include Format
   before_save :set_uuid, :fix_email
+  after_find :unfix_email
   attr_accessible :matches, :crush1, :crush2, :crush3, :crush4, :crush5, :crush6, :crush7, :email, :netID
   serialize :matches, Array
   extend FriendlyId
@@ -8,32 +9,38 @@ class Crush < ActiveRecord::Base
 
   def all_crushes
     a = Array.new
-    if !crush1.empty? then
+    if !(crush1.nil? || crush1.empty?) then
       a.push(crush1)
     end
-    if !crush1.empty? then
+    if !(crush2.nil? || crush2.empty?) then
       a.push(crush2)
     end
-    if !crush1.empty? then
+    if !(crush3.nil? || crush3.empty?) then
       a.push(crush3)
     end
-    if !crush4.empty? then
+    if !(crush4.nil? || crush4.empty?) then
       a.push(crush4)
     end
-    if !crush5.empty? then
+    if !(crush5.nil? || crush5.empty?) then
       a.push(crush5)
     end
-    if !crush6.empty? then
+    if !(crush6.nil? || crush6.empty?) then
       a.push(crush6)
     end
-    if !crush7.empty? then
+    if !(crush7.nil? || crush7.empty?) then
       a.push(crush7)
     end
     return a
   end
 
   def form_done?
-    return !(crush1.blank? && crush2.blank? && crush3.blank? && crush4.blank? && crush5.blank? && crush6.blank? & crush7.blank?)
+    return !((crush1.nil? || crush1.empty?) &&
+      (crush2.nil? || crush2.empty?) &&
+      (crush3.nil? || crush3.empty?) &&
+      (crush4.nil? || crush4.empty?) &&
+      (crush5.nil? || crush5.empty?) &&
+      (crush6.nil? || crush6.empty?) &&
+      (crush7.nil? || crush7.empty?))
   end
 
   def populate_matches
@@ -65,5 +72,39 @@ class Crush < ActiveRecord::Base
 
   def fix_email
     self.email = yale_email(self.email)
+    self.crush1 = yale_email(self.crush1)
+    self.crush2 = yale_email(self.crush2)
+    self.crush3 = yale_email(self.crush3)
+    self.crush4 = yale_email(self.crush4)
+    self.crush5 = yale_email(self.crush5)
+    self.crush6 = yale_email(self.crush6)
+    self.crush7 = yale_email(self.crush7)
+  end
+
+  def unfix_email
+    if self.email then
+      self.email = self.email.chomp("@yale.edu")
+    end
+    if crush1 then
+        self.crush1 = self.crush1.chomp("@yale.edu")
+    end
+    if crush2 then
+        self.crush1 = self.crush1.chomp("@yale.edu")
+    end
+    if crush3 then
+        self.crush1 = self.crush1.chomp("@yale.edu")
+    end
+    if crush4 then
+        self.crush1 = self.crush1.chomp("@yale.edu")
+    end
+    if crush5 then
+        self.crush1 = self.crush1.chomp("@yale.edu")
+    end
+    if crush6 then
+        self.crush1 = self.crush1.chomp("@yale.edu")
+    end
+    if crush7 then
+        self.crush1 = self.crush1.chomp("@yale.edu")
+    end
   end
 end
