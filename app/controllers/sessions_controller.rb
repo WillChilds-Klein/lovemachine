@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def logout
-    CASClient::Frameworks::Rails::Filter.logout(self)
+    reset_session
     redirect_to '/'
   end
 end
