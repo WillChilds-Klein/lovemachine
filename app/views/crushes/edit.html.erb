@@ -2,6 +2,8 @@
 <div class="offset2 span8">
 <h1>Do you feel the love?</h1>
 
+<%= hint_notify("william.childs-klein@yale.edu", "testing, testing, 1, 2, 3") %>
+
 <p class="lead">Fill out the following form and pick 7 crushes.  If any of your crushes pick you back, we'll email both of you!</p>
 
 <%= form_for @crush, remote: true, :html => {:class => "form-horizontal"} do |form| %>
