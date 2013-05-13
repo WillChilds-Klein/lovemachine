@@ -5,6 +5,8 @@ Lovemachine::Application.routes.draw do
 
   root to: 'static_pages#landing'
   resources :crushes
+  match '/logout' => 'sessions#logout'
+  match '/login' => 'sessions#login'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -77,3 +77,32 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 form {
   margin-top: 50px;
 }
+
+.headline {
+  padding: 50px 0;
+  text-align: center;
+  h1.logo-wrapper {
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 100px;
+    .logo {
+      background: url("heart_infinity.png") center 0 no-repeat;
+      background-size: 240px 216px;
+      height: 216px;
+      margin: 0 auto 26px;
+    }
+    small {
+      color: rgba(52, 73, 94, 0.3);
+      display: block;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      padding-top: 5px;
+    }
+  }
+}
+.landing-btn {
+  margin: 50px auto;
+  float: none;
+}
