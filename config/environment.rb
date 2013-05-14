@@ -9,9 +9,6 @@ CASClient::Frameworks::Rails::Filter.configure(
   :cas_base_url => "https://secure.its.yale.edu/cas"
 )
 
-ActionMailer::Base.perform_deliveries = true
-ActionMailer::Base.raise_delivery_errors = true
-ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   :address              => "smtp.sendgrid.net",
   :port                 => '587',
@@ -20,3 +17,5 @@ ActionMailer::Base.smtp_settings = {
   :password             => ENV['SENDGRID_PASSWORD'],
   :authentication       => :plain,
   :enable_starttls_auto => true  }
+
+ActionMailer::Base.delivery_method = :smtp

@@ -1,6 +1,5 @@
 class CrushMailer < ActionMailer::Base
   include Format
-  #default from: "app15649060@heroku.com"
 
   def match_notify(party1, party2)
     match_email(party1, party2)
@@ -11,13 +10,6 @@ class CrushMailer < ActionMailer::Base
   	@crusher = crusher
   	@crushee = crushee 
 
-  	mail(:to => crusher, :subject => "You'll want to open this. Trust me.")
-  end
-
-  def hint_notify(lucky_person, content) # email and content passed in as strings
-    @email = lucky_person
-    @content = content
-
-    mail(:to => @email, :subject => "oooOOOooo somebody liiikkkeess you")
+  	mail(:to => crusher, :from => "app15649060@herokuapp.com", :subject => "You'll want to open this. Trust me.").deliver!
   end
 end
