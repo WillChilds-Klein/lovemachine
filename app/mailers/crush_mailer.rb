@@ -1,6 +1,6 @@
 class CrushMailer < ActionMailer::Base
   include Format
-  default from: "yaleseniorcupid@gmail.com"
+  default from: "app15649060@heroku.com"
 
   def match_notify(party1, party2)
     match_email(party1, party2)
