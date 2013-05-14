@@ -17,7 +17,6 @@ class CrushesController < ApplicationController
                 :author => @crush.email)
     	end
     end
-    @crush.send_hints
     @crush.populate_matches
     @crush.send_emails
    	if request.xhr? 
