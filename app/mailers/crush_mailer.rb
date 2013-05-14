@@ -14,14 +14,10 @@ class CrushMailer < ActionMailer::Base
   	mail(:to => crusher, :subject => "You'll want to open this. Trust me.")
   end
 
-  def hint_notify(lucky_person, content) # Hint object passed in
+  def hint_notify(lucky_person, content) # email and content passed in as strings
     @email = lucky_person
     @content = content
 
     mail(:to => @email, :subject => "oooOOOooo somebody liiikkkeess you")
-  end
-
-  def crush_email
-  	# notify user when somebody names them as a crush, don't reveal name, just that person's hint.
   end
 end
