@@ -7,10 +7,9 @@ class CrushMailer < ActionMailer::Base
   end
 
   def match_email(crusher, crushee) # takes in emails, not Crush objects
-  	@crusher = first_name(crusher)
-  	@crushee_full = full_name(crushee)
-    @crushee = first_name(crushee)
+  	@crusher = crusher
+  	@crushee = crushee
 
-  	mail(:to => crusher, :from => "lovemachine@herokuapp.com", :subject => "You'll want to open this. Trust me.").deliver!
+  	mail(:to => "#{crusher.full_n} <#{crusher.email}>", :from => "Yale LoveMachine <lovemachine@herokuapp.com>", :subject => "You'll want to open this. Trust me.").deliver!
   end
 end

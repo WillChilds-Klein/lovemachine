@@ -6,6 +6,18 @@ class Crush < ActiveRecord::Base
   extend FriendlyId
   friendly_id :uuid
 
+  def first_n
+    first_name(self.email)
+  end
+
+  def last_n
+    last_name(self.email)
+  end
+
+  def full_n
+    full_name(self.email)
+  end
+
   def all_crushes
     a = Array.new
     if !(crush1.nil? || crush1.empty?) then
@@ -55,7 +67,7 @@ class Crush < ActiveRecord::Base
 
   def send_emails
     self.matches.each do |match|
-      CrushMailer.match_notify(self.email, match)
+      CrushMailer.match_notify(self, Crush.where(:email => match).first)
     end
   end
 
