@@ -10,6 +10,6 @@ class CrushMailer < ActionMailer::Base
   	@crusher = crusher
   	@crushee = crushee 
 
-  	mail(:to => crusher, :from => "app15649060@herokuapp.com", :subject => "You'll want to open this. Trust me.").deliver!
+  	mail(:to => crusher, :from => "lovemachine@herokuapp.com", :subject => "You'll want to open this. Trust me.").deliver!
   end
 end
